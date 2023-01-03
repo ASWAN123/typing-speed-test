@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f4f4f4;
+}
+
+.keyboard{
+    width: 150vh ;
+    /* border: 1px solid black ; */
+    margin: auto;
+    margin-top: 2%;
+}
+
+.keys{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.key{
+    height: 25px;
+    width: 25px;
+    list-style: none;
+    border: 1px solid brown;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin:6px 6px 6px 6px ;
+    text-align: center;
+    font-family: "VT323" , sans-serif;
+    font-size: 20px;
+    text-transform: uppercase ;
+    cursor: pointer;
+}
+.key span{
+    pointer-events: none;
+}
+
+.move{
+    background-color: red;
+}
+
+.key[value="13"] , .key[value="14"] , .key[value="57"] ,.key[value="54"] , .key[value="58"]{
+    padding: 10px 20px;
+    background-color: azure;
+}
+
+.key[value="28"] , .key[value="40"]{
+    padding: 10px 30px;
+    background-color: azure;
+}
+
+.key[value="41"] , .key[value="52"]{
+    padding: 10px 45px;
+    background-color: azure;
+}
+
+.key[value="0"] , .key[value="27"]{
+    background-color: azure;
+}
+.key[value="53"] , .key[value="55"] , .key[value="59"] {
+    padding: 10px 15px;
+    background-color: azure;
+}
+
+.key[value="56"]{
+    padding: 10px 11.5rem;
+    background-color: azure;
+}
+
+
+/* text area */
+
+.container{
+    width: 60% ;
+    height: 95px;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 10px;
+    position: relative;
+    
+}
+
+
+.myinput , .mytext {
+    all: unset;
+}
+
+
+
+.mytext{
+    color: gray;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    border: 1px solid greenyellow;
+    width:100%;
+    /* text-align: end; */
+}
+
+
+
+.myinput{
+    resize: none;
+    top: 0;
+    left: 0;
+    border: 1px solid red;
+    width:100%;
+
+}
+
+
+.myinput , .mytext{
+
+    height: 60px;
+    font-size: 25px;
+    background-color: transparent;
+    position:absolute;
+
+    /* overflow-x: scroll ; */
+    white-space: nowrap ;
+}
