@@ -7,12 +7,30 @@
     <title>Typing Speed Test</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
     <!-- input -->
+    <div class="header">
+        <div class="time">
+            <span>Timer :</span>
+            <span class="seconds">60s</span>
+        </div>
+        <div class="word">
+            <span>Words Per Minute <i>(WPM)</i>:</span>
+            <span class="words">0</span>
+        </div>
+        <div class="errors">
+            <span>Mistakes:</span>
+            <span class="mistakes">0</span>
+        </div>
+    </div>
     <div class="container">
-        <p class="mytext">placeholder text typically has a</p>
-        <textarea id = "input1" class= "myinput" type="text"></textarea>
+        <p class="mytext"></p>
     </div>
     
 
@@ -21,8 +39,8 @@
 
     <!-- keyboard keys -->
 
-    <!-- <div class="keyboard">
-    </div> -->
+    <div class="keyboard">
+    </div>
 </body>
 <script src="script.js"></script>
 <script src="keyboard.js"></script>

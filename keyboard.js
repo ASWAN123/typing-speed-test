@@ -1,51 +1,146 @@
-let paragraph = "lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+let paragraph = "korem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+let starter = false ;
 
-let x = 0;
-let placeholder = document.querySelector(".mytext")
-const myArray = paragraph.split(" ");
-// target text
-placeholder.innerHTML = myArray.slice(x , x+6).join(" ") ;
+let firsttext = paragraph.split(" ").slice(0 , 40).join(" ") ;
+let content = "" ;
+[...firsttext].forEach((ele , index) => {
+    content+= `<span class="char">${ele}</span>` ;
+});
+
+document.querySelector(".mytext").innerHTML = content ;
 
 
-document.body.addEventListener("keypress" , (e)=>{
-    let input = document.getElementById("input1")
-    let placeholder = document.querySelector(".mytext")
+// start effect
+let start ; 
+function change(){
+    start = setInterval( ()=>{
+        let firstspan = document.querySelectorAll(".char") ;
+        let ele = firstspan[0] ;
+        if(ele.classList.contains("start")){
+            ele.classList.remove('start') ;
+        }else{
+            ele.classList.add('start') ;
+        }
+    } , 500)
+}
 
-    // LOGIC FOR TEXT ADDING
-    let mywords = input.value.split(" ")
-    let placeholderCount = placeholder.textContent.split(" ")
-    if(mywords[3] == placeholderCount[3]){
-        console.log('ok');
-        // remove first 4 elements from the array  and  asign it again ;
-        x+=5 ;
-        placeholder.innerHTML = "";
-        placeholder.innerHTML = myArray.slice(x-1 , x+6).join(" ") ;
-        input.reset() ;
+function myStopFunction() {
+    clearInterval(start);
+    // console.log('stoped') ;
+}
 
+
+document.addEventListener('DOMContentLoaded', change);
+
+
+document.body.addEventListener("keypress" , (e)=> {
+    let firstspan = document.querySelectorAll(".char") ;
+
+
+    if(firstspan.length >= 1 ){
+        
+        let target = firstspan[0] ;
+
+        if(e.key == target.textContent){
+            target.classList.add("verified") ;
+        }else{
+            target.classList.add("mistake") ;
+        }
+
+        // keyboard effect
+        let keys = document.querySelectorAll(".key") ;
+        keys.forEach(element => {
+            // console.log(e.key , element.textContent) ;
+            if(e.key == element.textContent && e.key == target.textContent){
+                element.classList.add("animate__bounceIn");
+                setTimeout(()=>{
+                    element.classList.remove("animate__bounceIn");
+                } , 100) ;
+
+            }else{
+                if(e.key == element.textContent && e.key != target.textContent){
+                    element.classList.add("animate__bounceIn");
+                    setTimeout(()=>{
+                        element.classList.remove("animate__bounceIn");
+                    } , 100) ;
+                }
+
+            }
+        });
+        
+        // first character
+
+
+        // remove classes from old ready
+        target.classList.remove("char") ;
+        target.classList.remove("start") ;
+
+        // start effect
+        myStopFunction()
+
+
+        // next element be ready
+        if(firstspan.length == 1){
+            starter = "done" ;
+            console.log(starter);
+        }else{
+            firstspan[1].classList.add("start");
+            change()
+        }
+        
 
 
 
     }
 
+
+
+    // timer
+    let go ;
+    if(starter == false){
+        starter = true ;
+        go = setInterval( () =>{
+            let item = document.querySelector('.seconds');
+            if(item.textContent.replace("s","") != "0"){
+                item.textContent = item.textContent.replace("s", "") - 1 + "s" ;
+                if(starter == "done"){
+                    clearInterval(go) ;
+                }
+            }else{
+                document.querySelector(".header").classList.add("done") ;
+                starter = "done" ;
+                clearInterval(go) ;
+            }
+        } , 1000)
+
+    }
+
+    if(starter == "done" ){
+        document.querySelector(".header").classList.add("done") ;
+        // stop the game 
+        let all = document.querySelectorAll(".char")
+        all.forEach(ele =>{
+            ele.classList.remove("char") ;
+        })
+        // count words
+        let x = document.querySelector(".words")
+        let y = document.querySelector(".mytext").textContent.split(" ")
+        let s = document.querySelector('.seconds')
+        x.textContent =  y.filter( ele => ele.length >= 4  ).length + " in " + (60 - s.textContent.replace("s" , ""))+"s";
+        let m  = document.querySelectorAll(".mistake").length ;
+        let ms = document.querySelector(".mistakes") ;
+        ms.textContent = m ;
+    }
+
+
+        
+
+
+
+
 })
 
-// one two three four five six 
-// one two three four 
 
 
 
 
-
-// for coloring the buttons
-// let myClick = e.key ;
-// console.log(myClick) ;
-// let keys = document.querySelectorAll(".key") ;
-// keys.forEach(element => {
-//     if(myClick.toLowerCase() == element.textContent){
-//         console.log(element.textContent);
-//         element.classList.add("move");
-//         setTimeout(()=>{
-//             element.classList.remove("move");
-//         } , 100) ;
-//     }
-// });

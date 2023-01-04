@@ -7,10 +7,10 @@ body{
 }
 
 .keyboard{
-    width: 150vh ;
-    /* border: 1px solid black ; */
+    width: 855px ;
     margin: auto;
-    margin-top: 2%;
+    margin-top: 3%;
+    /* border: 1px solid black; */
 }
 
 .keys{
@@ -22,7 +22,7 @@ body{
     height: 25px;
     width: 25px;
     list-style: none;
-    border: 1px solid brown;
+    border: 1px solid darkslategray;
     border-radius: 5px;
     padding: 10px 10px;
     margin:6px 6px 6px 6px ;
@@ -36,87 +36,129 @@ body{
     pointer-events: none;
 }
 
-.move{
-    background-color: red;
+.good{
+    background-color: greenyellow;
+}
+
+.bad{
+    background-color: rgb(236, 136, 136);
 }
 
 .key[value="13"] , .key[value="14"] , .key[value="57"] ,.key[value="54"] , .key[value="58"]{
     padding: 10px 20px;
-    background-color: azure;
+    background-color: gray;
+    color: white;
 }
 
 .key[value="28"] , .key[value="40"]{
     padding: 10px 30px;
-    background-color: azure;
+    background-color: gray;
+    color: white;
 }
 
 .key[value="41"] , .key[value="52"]{
     padding: 10px 45px;
-    background-color: azure;
+    background-color: gray;
+    color: white;
 }
 
 .key[value="0"] , .key[value="27"]{
-    background-color: azure;
+    background-color: gray;
+    color: white;
 }
 .key[value="53"] , .key[value="55"] , .key[value="59"] {
     padding: 10px 15px;
-    background-color: azure;
+    background-color: gray;
+    color: white;
 }
 
 .key[value="56"]{
     padding: 10px 11.5rem;
-    background-color: azure;
+    background-color: gray;
+    color: white;
 }
 
 
 /* text area */
 
 .container{
-    width: 60% ;
-    height: 95px;
+    width: 855px ;
     margin: auto;
-    margin-top: 3rem;
-    padding: 10px;
-    position: relative;
-    
+    margin-top: 2rem;
+    font-family: "Roboto Mono" , sans-serif;
+    /* border: 1px solid black; */
 }
 
 
-.myinput , .mytext {
+.mytext {
     all: unset;
 }
 
 
-
 .mytext{
-    color: gray;
+    color: black;
     opacity: 0.4;
-    top: 0;
-    left: 0;
-    border: 1px solid greenyellow;
     width:100%;
-    /* text-align: end; */
+    font-size: 25px ;
+    background-color: transparent ;
+    margin: auto;
+    user-select: none;
+}
+.mytext span{
+    margin: auto;
 }
 
 
+.start {
+    background-color: rgb(13, 72, 235);
+}
 
-.myinput{
-    resize: none;
-    top: 0;
-    left: 0;
-    border: 1px solid red;
-    width:100%;
+.next{
+    background-color: rgb(13, 72, 235);
+}
 
+.verified{
+    color: blue;
+}
+
+.mistake{
+    color: rgb(238, 28, 28);
+}
+
+.next , .verified , .mistake{
+    opacity: 1;
 }
 
 
-.myinput , .mytext{
-
-    height: 60px;
+/* header  for notifcation*/
+.header{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    border: 1px solid black ;
+    font-family: "VT323" , sans-serif ;
     font-size: 25px;
-    background-color: transparent;
-    position:absolute;
+    padding: 20px;
+    background-color: gray;
+    color: white;
+    justify-content: space-between;
+}
 
-    /* overflow-x: scroll ; */
-    white-space: nowrap ;
+.time , .word , .errors{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
+/* .done{
+    background-color: rgb(233, 231, 231);
+    color: black;
+    border: none;
+} */
+
+.animate__bounceIn{
+    background-color: red;
 }
