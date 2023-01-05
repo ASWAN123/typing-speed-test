@@ -31,6 +31,7 @@ body{
     font-size: 20px;
     text-transform: uppercase ;
     cursor: pointer;
+    background-color: lightblue;
 }
 .key span{
     pointer-events: none;
@@ -67,15 +68,15 @@ body{
     color: white;
 }
 .key[value="53"] , .key[value="55"] , .key[value="59"] {
-    padding: 10px 15px;
-    background-color: gray;
-    color: white;
+    padding: 10px 15px ;
+    background-color: gray ;
+    color: white ;
 }
 
 .key[value="56"]{
-    padding: 10px 11.5rem;
-    background-color: gray;
-    color: white;
+    padding: 10px 11.5rem ;
+    background-color: gray ;
+    color: white ;
 }
 
 
@@ -83,9 +84,9 @@ body{
 
 .container{
     width: 855px ;
-    margin: auto;
-    margin-top: 2rem;
-    font-family: "Roboto Mono" , sans-serif;
+    margin: auto ;
+    margin-top: 2rem ;
+    font-family: "Roboto Mono" , sans-serif ;
     /* border: 1px solid black; */
 }
 
@@ -110,7 +111,8 @@ body{
 
 
 .start {
-    background-color: rgb(13, 72, 235);
+    /* background-color: rgb(13, 72, 235); */
+    border-left: 2px solid blue;
 }
 
 .next{
@@ -153,11 +155,15 @@ body{
 }
 
 
-/* .done{
-    background-color: rgb(233, 231, 231);
-    color: black;
+.done{
+    position: absolute ;
+    width: 90%;
+    color: white;
     border: none;
-} */
+    top: 11rem;
+    left: 3rem;
+    transition: all 1s ease-in-out;
+}
 
 .animate__bounceIn{
     background-color: red;
