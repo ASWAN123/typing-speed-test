@@ -12,4 +12,3 @@ keys.innerHTML = h ;
 keyboard.appendChild(keys) ;
 
 
-

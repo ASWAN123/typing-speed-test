@@ -146,7 +146,7 @@ body{
     justify-content: space-between;
 }
 
-.time , .word , .errors{
+.time , .word , .errors {
     width: 30%;
     display: flex;
     align-items: center;
@@ -154,6 +154,20 @@ body{
     margin: auto;
 }
 
+.refresh{
+    display: none;
+    margin: auto;
+    margin-top: 2rem;
+}
+.refresh-button{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+}
+.refresh-button a{
+    text-decoration: none;
+}
 
 .done{
     position: absolute ;

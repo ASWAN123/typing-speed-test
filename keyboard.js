@@ -147,6 +147,9 @@ document.body.addEventListener("keypress" , (e)=> {
         let m  = document.querySelectorAll(".mistake").length ;
         let ms = document.querySelector(".mistakes") ;
         ms.textContent = m ;
+
+        // show start again button 
+        document.querySelector(".refresh").style.display = "block"
     }
 
 })
