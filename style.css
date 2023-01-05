@@ -111,8 +111,8 @@ body{
 
 
 .start {
-    /* background-color: rgb(13, 72, 235); */
-    border-left: 2px solid blue;
+    background-color: blue;
+    /* border-left: 2px solid blue; */
 }
 
 .next{
