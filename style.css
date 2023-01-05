@@ -168,6 +168,9 @@ body{
 .refresh-button a{
     text-decoration: none;
 }
+.refresh-button a:active {
+    color: black;
+}
 
 .done{
     position: absolute ;
