@@ -10,5 +10,3 @@ buttons.forEach((ele , index)=> {
 
 keys.innerHTML = h ;
 keyboard.appendChild(keys) ;
-
-
